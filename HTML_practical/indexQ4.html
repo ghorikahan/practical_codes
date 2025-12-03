@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="Input-btn">Enter text</label>
+    <input type="text" id="Input-btn">
+    <button type="button" id="sub-btn">submit</button>
+
+    <h3>saved text:-</h3>
+    <div id="display-Area"></div>
+
+    <script>
+        var btn = document.querySelector("#sub-btn");
+
+        btn.addEventListener("click", () => {
+            var text = document.querySelector("#Input-btn").value;
+            localStorage.setItem("displayText", text);
+            console.log(localStorage.getItem("displayText"));
+
+            document.querySelector("#display-Area").textContent = text;
+        });
+    </script>
+</body>
+
+</html>
